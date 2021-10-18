@@ -1,0 +1,47 @@
+def animals_farm(string_1,string_2,string_3):
+    try:
+        input_1 = string_1.split("-")
+        input_2 = string_2.split("-")
+        input_3 = string_3.split("-")
+        animals,animal_count=[input_1[0],input_2[0],input_3[0]], [int(input_1[1]),int(input_2[1]),int(input_3[1])]
+        print(animals)
+        print(animal_count)
+        animal_farm=dict(zip(animals,animal_count))
+        print(animal_farm)
+        for ele in animals:
+            if ele.lower() in ['cow','horse','goat','hen']:
+                individual_heads,herd_heads,individual_legs,herd_legs=0,0,0,0
+                individual_heads = 1
+                herd_heads=individual_heads*animal_farm[ele]
+                if animal_farm[ele] == 'hen':
+                    individual_legs = 2
+                    herd_legs=individual_legs*animal_farm[ele]
+                    print(ele, ':', 'individual_heads: ', individual_heads, 'individual_legs:'
+                          , individual_legs, ' herd_heads:', herd_heads, 'herd_legs:', herd_legs)
+                else:
+                    individual_legs = 4
+                    herd_legs=individual_legs*animal_farm[ele]
+                    print(ele,':','individual_heads: ',individual_heads,'individual_legs:'
+                          ,individual_legs,' herd_heads:',herd_heads,'herd_legs:',herd_legs)
+            elif ele.lower()=='dragon':
+                individual_heads=2
+                individual_legs = 4
+                herd_heads=individual_heads*animal_farm[ele]
+                herd_legs=individual_legs*animal_farm[ele]
+                print(ele,':', 'individual_heads:',individual_heads,'individual_legs:', individual_legs, ' herd_heads:', herd_heads, 'herd_legs:', herd_legs)
+            else:
+                Exception("enter a valid animal in farm")
+    except Exception as e:
+        print("Exception :",e)
+
+
+
+try:
+    string_1 = input("enter the animal and count")
+    string_2 = input("enter the animal and count")
+    string_3 = input("enter the animal and count")
+    if string_1.isspace() or string_2.isspace() or string_3.isspace() or len(string_1)==0 or len(string_2)==0 or len(string_3)==0:
+        raise Exception("Enter a valid string")
+    animals_farm(string_1, string_2, string_3)
+except Exception as e:
+    print("Exception :", e)

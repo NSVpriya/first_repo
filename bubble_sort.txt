@@ -1,0 +1,16 @@
+def bubble_sorting( input_string ):
+    input_list = input_string.split(",")    #spliting list
+    integer_list = []
+    for element in input_list:
+        integer_list.append(int(element))
+    for iteration in range(len(integer_list)):   #iterating the list
+        for ele in range(0,len(integer_list)-1):
+            if integer_list[ele]>integer_list[ele+1]:
+                integer_list[ele],integer_list[ele+1]=integer_list[ele+1],integer_list[ele]  #swapping elements
+                print(integer_list)
+
+input_string = input("enter the string")
+if len(input_string) > 2: 
+    bubble_sorting(input_string)
+else:
+    print("Enter a valid string")

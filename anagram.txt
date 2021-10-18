@@ -1,0 +1,11 @@
+def is_anagram(string_1,string_2):
+    if len(string_1)==len(string_2):
+        return anagram_string.isdisjoint(string_1)
+    else:
+        retun "false"
+string_1=set(input("enter the string 1"))
+string_2=set(input("enter the string 2"))
+if len(string_2)>0 and len(string_1)>0:
+    print(is_anagram(string_1,string_2))
+else:
+    print("enter a valid string")
