@@ -1,6 +1,0 @@
-[user]
-	name = Valli
-	email = sreevallinanduri9@gmail.com
-	username= Valli
-
--------
